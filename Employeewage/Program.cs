@@ -9,11 +9,13 @@ namespace Employeewage
         public const int partTime = 2;
         public const int Emp_Rate_Per_Hour = 20;
         public const int Num_of_working_Days = 20;
+        public const int Max_Hrs_In_Month = 100;
         static void Main(string[] args)
         {
-            int empHrs = 0, empWage = 0, totalEmpwage = 0;
-            for (int day = 0; day <= Num_of_working_Days; day++)
+            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
+            while (totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays <= Num_of_working_Days)
             {
+                totalWorkingDays++;
                 Random randobj = new Random();
                 int checkPresent = randobj.Next(0, 3);
                 Console.WriteLine("Randome number=" + checkPresent);
@@ -29,11 +31,11 @@ namespace Employeewage
                         empHrs = 0;
                         break;
                 }
-                empWage = empHrs * Emp_Rate_Per_Hour;
-                totalEmpwage += empWage;
-                Console.WriteLine("Employee wage:" + empWage);
+                totalEmpHrs += empHrs;
+                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs :" + empHrs);
             }
-            Console.WriteLine("Total Emp Wage : " + totalEmpwage);
+            int totalEmpWage = totalEmpHrs * Emp_Rate_Per_Hour;
+            Console.WriteLine("Total Emp Wage : " + totalEmpWage);
 
            
 
