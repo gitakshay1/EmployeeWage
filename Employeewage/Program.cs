@@ -5,40 +5,49 @@ namespace Employeewage
 {
     class Program
     {   
-        public const int fullTime = 1;
-        public const int partTime = 2;
-        public const int Emp_Rate_Per_Hour = 20;
-        public const int Num_of_working_Days = 20;
-        public const int Max_Hrs_In_Month = 100;
+        
         static void Main(string[] args)
         {
-            int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
-            while (totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays <= Num_of_working_Days)
+            Console.WriteLine("Welcome To Employee Wage Program \nEnter the number for select UC" +
+                "\n1 UC1 Present or Absent \n2 UC2 Daily Employee Wage \n3 Add Part time Employe wage" +
+                "\n4 Using Switch Case \n5 UC5_Calculate Wage for month \n6 total working hours to reach month");
+            int Choice=Convert.ToInt32(Console.ReadLine()); 
+            switch(Choice)
             {
-                totalWorkingDays++;
-                Random randobj = new Random();
-                int checkPresent = randobj.Next(0, 3);
-                Console.WriteLine("Randome number=" + checkPresent);
-                switch (checkPresent)
-                {
-                    case partTime:
-                        empHrs = 4;
-                        break;
-                    case fullTime:
-                        empHrs = 8;
-                        break;
-                    default:
-                        empHrs = 0;
-                        break;
-                }
-                totalEmpHrs += empHrs;
-                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs :" + empHrs);
+                case 1:
+                    UC1_PresentorAbsent uC1_PresentorAbsent = new UC1_PresentorAbsent();
+                    uC1_PresentorAbsent.PresentorAbsent();
+                    break;
+
+                case 2:
+                    UC2_DailyEmployeeWage uC2_DailyEmployeeWage = new UC2_DailyEmployeeWage();
+                    uC2_DailyEmployeeWage.DailyEmployeeWage();
+                    break; 
+
+                case 3:
+                    UC3_AddPartTimeEmployeeWage uC3_AddPartTimeEmployeeWage = new UC3_AddPartTimeEmployeeWage();
+                    uC3_AddPartTimeEmployeeWage.AddPartTimeEmployeeWage();
+                    break;
+
+                case 4:
+                    UC4_UsingSwitchCase uC4_UsingSwitchCase = new UC4_UsingSwitchCase();
+                    uC4_UsingSwitchCase.UsingSwitchCase();
+                    break;
+
+                case 5:
+                    UC5_CalcultionWageforMonth uC5_CalcultionWageforMonth = new UC5_CalcultionWageforMonth();
+                    uC5_CalcultionWageforMonth.CalcultionWageforMonth();
+                    break;
+
+                case 6:
+                    UC6_Total_Working_Hours_or_days_is_reach_for_month uC6_Total_Working_Hours_Or_Days_Is_Reach_For_Month = new UC6_Total_Working_Hours_or_days_is_reach_for_month();
+                    uC6_Total_Working_Hours_Or_Days_Is_Reach_For_Month.Total_Working_Hours();
+                    break;
+                default:
+                    Console.WriteLine("Enter valid choice");
+                    break;
+
             }
-            int totalEmpWage = totalEmpHrs * Emp_Rate_Per_Hour;
-            Console.WriteLine("Total Emp Wage : " + totalEmpWage);
-
-           
-
         }
     }
 }
