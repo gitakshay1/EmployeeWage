@@ -44,6 +44,11 @@ namespace Employeewage
                     UC6_Total_Working_Hours_or_days_is_reach_for_month uC6_Total_Working_Hours_Or_Days_Is_Reach_For_Month = new UC6_Total_Working_Hours_or_days_is_reach_for_month();
                     uC6_Total_Working_Hours_Or_Days_Is_Reach_For_Month.Total_Working_Hours();
                     break;
+                case 7:
+                    UC8_EmployeeWageForMultipleCompanies uC8_EmployeeWageForMultipleCompanies = new UC8_EmployeeWageForMultipleCompanies();
+                    uC8_EmployeeWageForMultipleCompanies.MultipleCompany("DMrt", 20, 2, 10);
+                    uC8_EmployeeWageForMultipleCompanies.MultipleCompany("Reliance", 10, 4, 20);
+                    break;
                 default:
                     Console.WriteLine("Enter valid choice");
                     break;
