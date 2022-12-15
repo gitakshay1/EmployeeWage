@@ -48,7 +48,8 @@ namespace Employeewage
                     UC8_EmployeeWageForMultipleCompanies uC8_EmployeeWageForMultipleCompanies = new UC8_EmployeeWageForMultipleCompanies();
                     uC8_EmployeeWageForMultipleCompanies.MultipleCompany("DMrt", 20, 2, 10);
                     uC8_EmployeeWageForMultipleCompanies.MultipleCompany("Reliance", 10, 4, 20);
-                    break;
+                    break; 
+
                 default:
                     Console.WriteLine("Enter valid choice");
                     break;
