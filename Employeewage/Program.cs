@@ -10,7 +10,8 @@ namespace Employeewage
         {
             Console.WriteLine("Welcome To Employee Wage Program \nEnter the number for select UC" +
                 "\n1 UC1 Present or Absent \n2 UC2 Daily Employee Wage \n3 Add Part time Employe wage" +
-                "\n4 Using Switch Case \n5 UC5_Calculate Wage for month \n6 total working hours to reach month");
+                "\n4 Using Switch Case \n5 UC5_Calculate Wage for month \n6 total working hours to reach month \n" +
+                "7 Multiple company");
             int Choice=Convert.ToInt32(Console.ReadLine()); 
             switch(Choice)
             {
@@ -42,6 +43,11 @@ namespace Employeewage
                 case 6:
                     UC6_Total_Working_Hours_or_days_is_reach_for_month uC6_Total_Working_Hours_Or_Days_Is_Reach_For_Month = new UC6_Total_Working_Hours_or_days_is_reach_for_month();
                     uC6_Total_Working_Hours_Or_Days_Is_Reach_For_Month.Total_Working_Hours();
+                    break;
+                case 7:
+                    UC8_EmployeeWageForMultipleCompanies uC8_EmployeeWageForMultipleCompanies = new UC8_EmployeeWageForMultipleCompanies();
+                    uC8_EmployeeWageForMultipleCompanies.MultipleCompany("DMrt", 20, 2, 10);
+                    uC8_EmployeeWageForMultipleCompanies.MultipleCompany("Reliance", 10, 4, 20);
                     break;
                 default:
                     Console.WriteLine("Enter valid choice");
